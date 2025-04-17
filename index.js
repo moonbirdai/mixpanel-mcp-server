@@ -19,7 +19,7 @@ const program = new Command();
 program
   .name('mixpanel-mcp-server')
   .description('MCP server for Mixpanel analytics')
-  .version('1.0.0')
+  .version('2.0.1')
   .requiredOption('--token <string>', 'Your Mixpanel project token')
   .option('--debug', 'Enable debug mode for verbose logging', false)
   .parse();
@@ -129,7 +129,7 @@ const tools = [
 const server = new Server(
   {
     name: "mixpanel-analytics",
-    version: "1.0.0",
+    version: "2.0.1",
   },
   {
     capabilities: {

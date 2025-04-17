@@ -2,6 +2,8 @@
 
 A [Model Context Protocol (MCP)](https://modelcontextprotocol.io) server for integrating Mixpanel analytics into AI workflows. This server allows AI assistants like Claude to track events, page views, user signups, and update user profiles in Mixpanel.
 
+**Version 2.0.1 Note:** Tool names now include the `mixpanel_` prefix to prevent namespace collisions with other analytics MCP servers.
+
 ## Table of Contents
 
 - [Features](#features)
@@ -112,13 +114,13 @@ This server uses the standard Model Context Protocol and can be integrated with 
 
 2. Connect your MCP client to the server using stdio transport
 
-3. The client can discover and use the available tools (track_event, track_pageview, track_signup, set_user_profile)
+3. The client can discover and use the available tools (mixpanel_track_event, mixpanel_track_pageview, mixpanel_track_signup, mixpanel_set_user_profile)
 
 ## Tool Reference
 
 The Mixpanel MCP server provides the following tools:
 
-### track_event
+### mixpanel_track_event
 
 Tracks a custom event in Mixpanel.
 
@@ -139,7 +141,7 @@ Tracks a custom event in Mixpanel.
 }
 ```
 
-### track_pageview
+### mixpanel_track_pageview
 
 Tracks a page view event in Mixpanel.
 
@@ -157,7 +159,7 @@ Tracks a page view event in Mixpanel.
 }
 ```
 
-### track_signup
+### mixpanel_track_signup
 
 Tracks a signup event and creates a user profile in Mixpanel.
 
@@ -175,7 +177,7 @@ Tracks a signup event and creates a user profile in Mixpanel.
 }
 ```
 
-### set_user_profile
+### mixpanel_set_user_profile
 
 Updates a user's profile properties in Mixpanel.
 
@@ -207,7 +209,7 @@ You: Can you track an event in Mixpanel when a user clicks the submit button?
 
 Claude: I'll track that event for you. Let me use the Mixpanel analytics tool.
 
-[Claude uses the track_event tool with appropriate parameters]
+[Claude uses the mixpanel_track_event tool with appropriate parameters]
 
 Claude: I've successfully tracked the 'button_clicked' event in Mixpanel with the properties you specified.
 ```
@@ -219,7 +221,7 @@ You: Create a new user profile in Mixpanel for Sarah Johnson who signed up with 
 
 Claude: I'll create that user profile in Mixpanel.
 
-[Claude uses the track_signup tool with appropriate parameters]
+[Claude uses the mixpanel_track_signup tool with appropriate parameters]
 
 Claude: I've successfully tracked the signup for Sarah Johnson and created a profile in Mixpanel with the premium plan.
 ```
