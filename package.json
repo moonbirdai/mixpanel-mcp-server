@@ -1,7 +1,7 @@
 {
   "name": "mixpanel-mcp-server",
   "version": "1.0.0",
-  "description": "MCP server for Mixpanel analytics",
+  "description": "MCP server for Mixpanel analytics integration with AI assistants",
   "type": "module",
   "main": "index.js",
   "bin": {
@@ -15,10 +15,26 @@
     "mixpanel",
     "analytics",
     "mcp",
-    "model-context-protocol"
+    "model-context-protocol",
+    "claude",
+    "ai",
+    "assistant",
+    "tools",
+    "tracking"
   ],
   "author": "Ciara Adkins",
   "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ciaraadkins/mixpanel-mcp-server.git"
+  },
+  "bugs": {
+    "url": "https://github.com/ciaraadkins/mixpanel-mcp-server/issues"
+  },
+  "homepage": "https://github.com/ciaraadkins/mixpanel-mcp-server#readme",
+  "engines": {
+    "node": ">=16.0.0"
+  },
   "dependencies": {
     "@modelcontextprotocol/sdk": "0.5.0",
     "commander": "^11.1.0",
