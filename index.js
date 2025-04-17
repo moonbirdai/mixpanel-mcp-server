@@ -40,7 +40,7 @@ log(`Initializing Mixpanel MCP server with token: ${mixpanelToken.substring(0, 3
 // Tool definitions
 const tools = [
   {
-    name: "track_event",
+    name: "mixpanel_track_event",
     description: "Track a custom event in Mixpanel",
     inputSchema: {
       type: "object",
@@ -62,7 +62,7 @@ const tools = [
     }
   },
   {
-    name: "track_pageview",
+    name: "mixpanel_track_pageview",
     description: "Track a page view event in Mixpanel",
     inputSchema: {
       type: "object",
@@ -84,8 +84,8 @@ const tools = [
     }
   },
   {
-    name: "track_signup",
-    description: "Track a signup event and create a user profile",
+    name: "mixpanel_track_signup",
+    description: "Track a signup event and create a user profile in Mixpanel",
     inputSchema: {
       type: "object",
       properties: {
@@ -106,7 +106,7 @@ const tools = [
     }
   },
   {
-    name: "set_user_profile",
+    name: "mixpanel_set_user_profile",
     description: "Update a user's profile properties in Mixpanel",
     inputSchema: {
       type: "object",
@@ -157,7 +157,7 @@ server.setRequestHandler(CallToolRequestSchema, async (request) => {
     let result;
     
     switch (name) {
-      case "track_event": {
+      case "mixpanel_track_event": {
         if (!args.event_name) {
           throw new Error("Missing required parameter: event_name");
         }
@@ -176,7 +176,7 @@ server.setRequestHandler(CallToolRequestSchema, async (request) => {
         break;
       }
       
-      case "track_pageview": {
+      case "mixpanel_track_pageview": {
         if (!args.page_name) {
           throw new Error("Missing required parameter: page_name");
         }
@@ -196,7 +196,7 @@ server.setRequestHandler(CallToolRequestSchema, async (request) => {
         break;
       }
       
-      case "track_signup": {
+      case "mixpanel_track_signup": {
         if (!args.user_name || !args.email) {
           throw new Error("Missing required parameters: user_name and email");
         }
@@ -211,7 +211,7 @@ server.setRequestHandler(CallToolRequestSchema, async (request) => {
         break;
       }
       
-      case "set_user_profile": {
+      case "mixpanel_set_user_profile": {
         if (!args.distinct_id || !args.properties) {
           throw new Error("Missing required parameters: distinct_id and properties");
         }
