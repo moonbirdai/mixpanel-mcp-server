@@ -1,0 +1,24 @@
+# Smithery configuration file: https://smithery.ai/docs/build/project-config
+
+startCommand:
+  type: stdio
+  commandFunction:
+    # A JS function that produces the CLI command based on the given config to start the MCP on stdio.
+    |-
+    (config) => ({ command: 'node', args: ['index.js', '--token', config.token, ...(config.debug ? ['--debug'] : [])], env: {} })
+  configSchema:
+    # JSON Schema defining the configuration options for the MCP.
+    type: object
+    required:
+      - token
+    properties:
+      token:
+        type: string
+        description: Your Mixpanel project token
+      debug:
+        type: boolean
+        default: false
+        description: Enable debug mode for verbose logging
+  exampleConfig:
+    token: YOUR_MIXPANEL_TOKEN
+    debug: false
