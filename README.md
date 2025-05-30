@@ -1,5 +1,7 @@
 # Mixpanel MCP Server
 
+[![smithery badge](https://smithery.ai/badge/@moonbirdai/mixpanel-mcp-server)](https://smithery.ai/server/@moonbirdai/mixpanel-mcp-server)
+
 A [Model Context Protocol (MCP)](https://modelcontextprotocol.io) server for integrating Mixpanel analytics into AI workflows. This server allows AI assistants like Claude to track events, page views, user signups, and update user profiles in Mixpanel.
 
 **Version 2.0.1 Note:** Tool names now include the `mixpanel_` prefix to prevent namespace collisions with other analytics MCP servers.
@@ -33,6 +35,14 @@ A [Model Context Protocol (MCP)](https://modelcontextprotocol.io) server for int
 
 - Node.js 16 or higher
 - A Mixpanel project token (get one by signing up at [Mixpanel](https://mixpanel.com))
+
+### Installing via Smithery
+
+To install Mixpanel Analytics Integration Server for Claude Desktop automatically via [Smithery](https://smithery.ai/server/@moonbirdai/mixpanel-mcp-server):
+
+```bash
+npx -y @smithery/cli install @moonbirdai/mixpanel-mcp-server --client claude
+```
 
 ### NPM Installation (Recommended)
 
